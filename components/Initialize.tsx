@@ -50,10 +50,6 @@ export const Initialize: FC<Props> = ({ setCounter, setTransactionUrl }) => {
             // After the transaction is confirmed, you can get the signature and update the UI
             let url = `https://explorer.solana.com/tx/${tx}?cluster=devnet`;
 
-            // Fetch the account after initialization
-            const account = await program.account.myAccount.fetch(
-                newAccount.publicKey
-            );
             setCounter(newAccount.publicKey);
             setTransactionUrl(url);
         } catch (err) {
